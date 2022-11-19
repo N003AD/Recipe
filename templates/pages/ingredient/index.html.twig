@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue Chez Tidiane Academy{% endblock %}
+
+{% block body %}
+              <div class="container mt-5">
+                    <h1>Mes ingredients</h1>
+                       
+
+              <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Numéro</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Date de création</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for ingredient in ingredients %}
+                            <tr class="table-primary">
+                                <th scope="row">{{  ingredient.id }}</th>
+                                <td>{{  ingredient.name }}</td>
+                                <td>{{  ingredient.price }}</td>
+                                <td>{{  ingredient.createdAt|date("m/d/Y") }}</td>  
+                            </tr>
+                    {% endfor %}
+                    </tbody>
+              </table>
+            </div>  
+
+{% endblock %}
